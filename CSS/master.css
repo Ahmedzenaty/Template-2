@@ -407,8 +407,119 @@ header .container nav .form .icon{
 }
 .portfolio .photo-flex .box{
     flex-basis: 25%;
+    overflow: hidden;
+    position: relative;
 }
 .portfolio .photo-flex .box img {
     max-width: 100%;
 }
+@media (max-width: 768px){
+    .portfolio .photo-flex .box{
+        flex-basis: 50%;
+    }
+}
+@media (max-width: 400px){
+    .portfolio .photo-flex .box{
+        flex-basis: 100%;
+    }
+}
+.portfolio .photo-flex .box .caption{
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    transition: 0.3s;
+    bottom: -100%;
+}
+.portfolio .photo-flex .box:hover .caption{
+    bottom: 0%;
+}
+.portfolio .photo-flex .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+    transition: 0.3s;
+}
+.portfolio .photo-flex .box .caption h3 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.portfolio .photo-flex .box .caption p {
+    color: var(--primary-color);
+}
+.portfolio .more {
+    display: block ;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    margin: 3px auto;
+    width: fit-content;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 /* End portfolio section */
+
+/* Start video section */
+.video{
+    background-image: url(../img/awesome-video_2.mp4);
+    position: relative;
+    overflow: hidden;
+}
+.video::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 40%);
+}
+.video video{
+    width: 100%;
+}
+.video .content {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    background-color: var(--transparent-color);
+    text-align: center;
+    padding: 50px;
+    transform: translateY(-50%);
+}
+.video .content h2 {
+    color: white;
+    font-weight: normal;
+    margin: 0 0 30px;
+    text-transform: uppercase;
+}
+.video .content p{
+    color: white;
+    text-transform: capitalize;
+    margin: 0 0 30px;
+}
+.video .content .more {
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+    text-transform: uppercase;
+}
+/* End video Section */
+.about {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    overflow: hidden;
+    text-align: center;
+}
+.about img {
+    position: relative;
+    bottom: -120px;
+    margin-top: -120px;
+    max-width: 100%;
+}
+@media (max-width: 767px){
+    .about img {
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
